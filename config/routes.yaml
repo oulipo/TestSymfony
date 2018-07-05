@@ -39,3 +39,19 @@ update:
 supprimer:
   path: /supprimer/{id}
   controller: App\Controller\DefaultController::supprimer
+
+index:
+  path: /creer_produit
+  controller: App\Controller\ProduitController::index
+
+produits_filtre:
+  path: /produits/{prix}
+  controller: App\Controller\ProduitController::produitsFiltre
+
+produits_cat:
+  path: /produits/categorie/{id}
+  controller: App\Controller\ProduitController::produitsCat
+
+creer_produit:
+  path: /produit/creer
+  controller: App\Controller\ProduitController::creerProduit

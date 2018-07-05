@@ -36,15 +36,29 @@ class ArticleRepository extends ServiceEntityRepository
     }
     */
 
-    /*
+    
     public function findOneBySomeField($value): ?Article
     {
         return $this->createQueryBuilder('a')
+            ->select('a.prenom')
+            ->addSelect('a.')
             ->andWhere('a.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
+    
 }
+
+// select
+// addSelect
+// from
+// join
+// innerJoin
+// leftJoin
+// where
+// andWhere
+// orWhere
+// groupBy
+// andGroupBy
