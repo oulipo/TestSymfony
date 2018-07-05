@@ -11,5 +11,31 @@ faq:
   controller: App\Controller\DefaultController::faq
 
 design:
-  path: design
+  path: /design
   controller: App\Controller\DefaultController::design
+
+creer_article:
+  path: /creer/{titre}/{contenu}
+  controller: App\Controller\DefaultController::creer_article
+
+article:
+  path: /article/{id}
+  controller: App\Controller\DefaultController::article
+
+  ## findAll()
+articles:
+  path: /articles
+  controller: App\Controller\DefaultController::articles
+
+  ## findBy, findOneBy
+articles_by:
+  path: /articles/{prop}/{recherche}
+  controller: App\Controller\DefaultController::articles_by
+
+update:
+  path: /update/{id}/{prop}/{valeur}
+  controller: App\Controller\DefaultController::update
+
+supprimer:
+  path: /supprimer/{id}
+  controller: App\Controller\DefaultController::supprimer
