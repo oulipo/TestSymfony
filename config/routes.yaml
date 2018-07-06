@@ -55,3 +55,7 @@ produits_cat:
 creer_produit:
   path: /produit/creer
   controller: App\Controller\ProduitController::creerProduit
+
+confirmation:
+  path: /confirmation
+  controller: App\Controller\ProduitController::confirmation

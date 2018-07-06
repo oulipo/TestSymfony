@@ -71,8 +71,23 @@ class ProduitController extends Controller
                      ->add('categorie', EntityType::class, ['class' => Categorie::class, 'choice_label' => "nom"])
                      ->add('creer', SubmitType::class, ['label' => 'Créer un produit'])
                      ->getForm();
+
+        $form->handleRequest($request);
+        if( $form->isSubmitted() && $form->isValid()) {
+            $produit = $form->getData();
+            $produit->setCreatedAt(new \DateTime("now"));
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($produit);
+            $entityManager->flush();
+            return $this->redirectToRoute('confirmation');
+        }
+
         return $this->render('produit/creer.html.twig', [
             'form' => $form->createView()
         ]);
+    }
+
+    public function confirmation() {
+        return $this->render('produit/confirmation.html.twig');
     }
 }
